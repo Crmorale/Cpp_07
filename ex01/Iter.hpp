@@ -15,18 +15,18 @@
 
 #include <cstddef>
 
-template <typename T>
-void iter(T* array, const size_t length, void (*func)(T&))
+template <typename T, typename F>
+void iter(T* array, const size_t length, F function)
 {
     for (size_t i = 0; i < length; i++)
-        func(array[i]);
+        function(array[i]);
 }
 
 template <typename T>
-void iter(const T* array, const size_t length, void (*func)(const T&))
+void iter(const T* array, const size_t length, F function)
 {
     for (size_t i = 0; i < length; i++)
-        func(array[i]);
+        function(array[i]);
 }
 
 #endif
