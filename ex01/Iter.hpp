@@ -22,7 +22,7 @@ void iter(T* array, const size_t length, F function)
         function(array[i]);
 }
 
-template <typename T>
+template <typename T, typename F>
 void iter(const T* array, const size_t length, F function)
 {
     for (size_t i = 0; i < length; i++)
