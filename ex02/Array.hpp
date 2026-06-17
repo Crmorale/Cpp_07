@@ -1,0 +1,39 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Array.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: crmorale <crmorale@student.42malaga.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/06/17 16:20:50 by crmorale          #+#    #+#             */
+/*   Updated: 2026/06/17 16:22:34 by crmorale         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef ARRAY_HPP
+# define ARRAY_HPP
+
+# include <exception>
+# include <stdexcept>
+
+template <typename T>
+class Array
+{
+	private:
+		T				*_array;
+		unsigned int	_size;
+
+	public:
+		Array();
+		Array(unsigned int n);
+		Array(const Array &other);
+		Array &operator=(const Array &other);
+		~Array();
+
+		T &operator[](unsigned int index);
+		const T &operator[](unsigned int index) const;
+
+		unsigned int size() const;
+};
+
+#endif
